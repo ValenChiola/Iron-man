@@ -2,6 +2,8 @@ package Clases;
 
 public class Bota extends Armadura {
 
+    private String atri1;
+    
     public Bota() {
         super();
     }
