@@ -3,7 +3,8 @@ package Clases;
 public class Bota extends Armadura {
 
     private String atri1;
-    
+    private String atri2;
+
     public Bota() {
         super();
     }
