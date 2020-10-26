@@ -15,7 +15,7 @@ public class Traje {
     //private final Armadura b2 = new Bota();
 
     public Traje() {
-        this.energia = 400;
+        this.energia = (int) (b1.getEnergia() + g1.getEnergia() + c.getEnergia() + s.getEnergia());
         this.radar = new float[10];
     }
 
