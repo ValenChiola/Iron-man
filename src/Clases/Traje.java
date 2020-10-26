@@ -11,8 +11,6 @@ public class Traje {
     private Sintetizador s = new Sintetizador();
     private int energia;
     private float[] radar;
-    //private final Armadura g2 = new Guante();
-    //private final Armadura b2 = new Bota();
 
     public Traje() {
         this.energia = (int) (b1.getEnergia() + g1.getEnergia() + c.getEnergia() + s.getEnergia());
