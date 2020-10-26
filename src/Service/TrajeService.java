@@ -15,14 +15,6 @@ public class TrajeService {
         return new Traje();
     }
 
-//    Los dispositivos son revisados por JARVIS para ver si se encuentran dañados. En
-//caso de encontrar un dispositivo dañado se debe intentar arreglarlo de manera
-//insistente. Para esos intentos hay un 30% de posibilidades de que el dispositivo
-//quede destruido, pero se deberá intentar arreglarlo hasta que lo repare, o bien
-//hasta que quede destruido.
-//Hacer un método llamado revisar dispositivos que efectúe lo anteriormente
-//descrito, el mecanismo insistente debe efectuarlo con un bucle do while
-//    
     private void gastar(int m, Armadura a, Traje t) {
         if (!a.isRoto() && !a.isDestruido()) {
             if (a.getEnergia() >= m) {
@@ -44,7 +36,6 @@ public class TrajeService {
                 t.setEnergia((int) (t.getEnergia() - a.getEnergia()));
                 a.setEnergia(0);
                 a.setHp(0);
-                System.out.println("HOla 2");
             }
         }
     }
@@ -65,6 +56,7 @@ public class TrajeService {
 
     public void radar(Traje t) {
         boolean hostil;
+        boolean ya = false;
         int ne = 0;
         for (int i = 0; i < 10; i++) {
             Enemigo e = new Enemigo();
@@ -106,10 +98,14 @@ public class TrajeService {
                         t.getS().escribir(t, "El enemigo " + ne + " está fuera del alcance");
                     }
                 } else {
-                    accionesEvasivas(t);
+                    if (!ya) {
+                        accionesEvasivas(t);
+                        ya = true;
+                    }
                 }
             }
         }
+        ya = false;
     }
 
     private void accionesEvasivas(Traje t) {

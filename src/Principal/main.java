@@ -3,6 +3,7 @@ package Principal;
 import Clases.Traje;
 import Exception.TrajeException;
 import Service.TrajeService;
+import java.util.Scanner;
 
 public class main {
 
@@ -14,7 +15,7 @@ public class main {
 
         System.out.println("Iniciando software... por favor espere");
 
-        //Esperar 5 seg antes de empezar
+        //Esperar 4 seg antes de empezar
         try {
             Thread.sleep(4000);
         } catch (InterruptedException e) {
